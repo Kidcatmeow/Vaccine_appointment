@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="helloworld" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #434343;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectgui.mainmenu">
+   <children>
+      <ImageView fitHeight="292.0" fitWidth="298.0" layoutX="101.0" layoutY="38.0">
+         <image>
+            <Image url="@../../../lmao.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Bookvaccinebutton" layoutX="116.0" layoutY="365.0" mnemonicParsing="false" onAction="#gotobookvaxx" prefHeight="51.0" prefWidth="271.0" style="-fx-background-color: #F99D2B; -fx-background-radius: 10;" text="Book a vaccination" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="viewmyappointmentka" layoutX="116.0" layoutY="433.0" mnemonicParsing="false" onAction="#viewmyappointment" prefHeight="51.0" prefWidth="271.0" style="-fx-background-color: #F99D2B; -fx-background-radius: 10;" text="View my appointment" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="checkappointmentbutton" layoutX="116.0" layoutY="502.0" mnemonicParsing="false" onAction="#checkmyappointment" prefHeight="51.0" prefWidth="271.0" style="-fx-background-color: #F99D2B; -fx-background-radius: 10;" text="Change my appointment" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>

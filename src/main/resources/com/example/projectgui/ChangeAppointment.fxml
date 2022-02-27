@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="pane" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #434343;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectgui.ChangeAppointment">
+   <children>
+      <ImageView fitHeight="546.0" fitWidth="424.0" layoutX="33.0" layoutY="31.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../doctor8.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="91.0" layoutX="358.0" layoutY="47.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../lmao.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="-2.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Appointment" textAlignment="CENTER" wrappingWidth="478.3125">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="77.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your ID">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="UserID" layoutX="169.0" layoutY="123.0" />
+      <Button fx:id="submitButton" layoutX="209.0" layoutY="217.0" mnemonicParsing="false" onAction="#checkID" prefWidth="70.0" style="-fx-background-color: #F99D2B; -fx-background-radius: 10;" text="Submit" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Text fx:id="errorText" fill="WHITE" layoutX="340.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User not found" />
+      <Text fx:id="prompt" fill="WHITE" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What would you like to change?" textAlignment="CENTER" wrappingWidth="500.0">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <RadioButton fx:id="changeVac" layoutX="67.0" layoutY="375.0" mnemonicParsing="false" onAction="#select_whatToChange" text="Vaccine type" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="change" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="changeDate" layoutX="178.0" layoutY="375.0" mnemonicParsing="false" onAction="#select_whatToChange" text="Appointment date" textFill="WHITE" toggleGroup="$change" />
+      <RadioButton fx:id="changePlace" layoutX="312.0" layoutY="375.0" mnemonicParsing="false" onAction="#select_whatToChange" text="Appointment place" textFill="WHITE" toggleGroup="$change" />
+      <DatePicker fx:id="pickDate" layoutX="155.0" layoutY="455.0" />
+      <ComboBox fx:id="pickPlace" layoutX="175.0" layoutY="455.0" prefWidth="150.0" />
+      <ComboBox fx:id="pickVac" layoutX="167.0" layoutY="455.0" onAction="#select_whatToChange" prefWidth="150.0" visibleRowCount="4" />
+      <Text fx:id="prompt_entervalue" fill="WHITE" layoutX="-8.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter new value" textAlignment="CENTER" wrappingWidth="500.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="confirmButton" layoutX="180.0" layoutY="495.0" mnemonicParsing="false" onAction="#insert_to_database" style="-fx-background-color: #F99D2B; -fx-background-radius: 10;" text="Confirm changes" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Text fx:id="statusText" fill="#30ae48" layoutX="-9.0" layoutY="555.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" textAlignment="CENTER" wrappingWidth="510.0" />
+      <Button fx:id="goback" layoutY="573.0" mnemonicParsing="false" onAction="#toMainmenu" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../backbutton.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text fill="WHITE" layoutX="76.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="nameTextField" layoutX="169.0" layoutY="162.0" />
+      <Text fx:id="nameVerification" fill="WHITE" layoutX="340.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name verified" />
+      <RadioButton fx:id="changeapp" layoutX="151.0" layoutY="267.0" mnemonicParsing="false" onAction="#checkID" text="Change appointment information" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="XD" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="deleteapp" layoutX="151.0" layoutY="294.0" mnemonicParsing="false" onAction="#checkID" text="Cancel an appointment" textFill="WHITE" toggleGroup="$XD" />
+      <Button fx:id="deletebtn" layoutX="210.0" layoutY="412.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #F99D2B; -fx-background-radius: 10;" text="Delete" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

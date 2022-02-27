@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="pane" prefHeight="600.0" prefWidth="502.0" style="-fx-background-color: #434343;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectgui.BookaVaccine">
+   <children>
+      <ImageView fitHeight="540.0" fitWidth="426.0" layoutX="44.0" layoutY="35.0" nodeOrientation="INHERIT" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../doctor8.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="140.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book a Vaccine" textAlignment="CENTER" underline="true" wrappingWidth="231.0">
+         <font>
+            <Font name="SansSerif Regular" size="30.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+      <Text fill="WHITE" layoutX="115.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="41.61669921875">
+         <font>
+            <Font name="Dubai Regular" size="15.0" />
+         </font>
+      </Text>
+      <TextField fx:id="nameField" layoutX="166.0" layoutY="135.0" prefHeight="26.0" prefWidth="187.0">
+         <effect>
+            <Glow />
+         </effect></TextField>
+      <CheckBox fx:id="conditionCheckbox" layoutX="146.0" layoutY="179.0" mnemonicParsing="false" text="Do you have any medical conditions?" textFill="WHITE" />
+      <RadioButton fx:id="sinovac" layoutX="123.0" layoutY="257.0" mnemonicParsing="false" selected="true" text="Sinovac" textFill="#dddddd">
+         <toggleGroup>
+            <ToggleGroup fx:id="vaccine" />
+         </toggleGroup>
+         <font>
+            <Font name="SansSerif Regular" size="12.0" />
+         </font></RadioButton>
+      <Text fill="WHITE" layoutX="121.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose your vaccine:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <RadioButton fx:id="astrazeneca" layoutX="123.0" layoutY="287.0" mnemonicParsing="false" text="AstraZeneca" textFill="#dddddd" toggleGroup="$vaccine" />
+      <RadioButton fx:id="pfizer" layoutX="123.0" layoutY="317.0" mnemonicParsing="false" text="Pfizer" textFill="#dddddd" toggleGroup="$vaccine">
+         <font>
+            <Font name="SansSerif Regular" size="12.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="johnson" layoutX="123.0" layoutY="347.0" mnemonicParsing="false" text="Johnson" textFill="#dddddd" toggleGroup="$vaccine" />
+      <Text fill="WHITE" layoutX="119.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Place">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="placeComboBox" layoutX="166.0" layoutY="396.0" prefHeight="25.0" prefWidth="187.0">
+         <effect>
+            <Glow />
+         </effect></ComboBox>
+      <Text fill="WHITE" layoutX="120.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Button fx:id="submitButton" layoutX="166.0" layoutY="482.0" mnemonicParsing="false" onAction="#Submit" prefHeight="25.0" prefWidth="187.0" style="-fx-background-color: #F99D2B; -fx-background-radius: 10px;" text="Submit" textAlignment="CENTER" textFill="WHITE" />
+      <DatePicker fx:id="datePicker" layoutX="166.0" layoutY="436.0" prefHeight="25.0" prefWidth="187.0">
+         <effect>
+            <Blend>
+               <topInput>
+                  <Glow />
+               </topInput>
+            </Blend>
+         </effect></DatePicker>
+      <AnchorPane layoutX="290.0" layoutY="147.0" />
+      <Text fx:id="errorText" fill="WHITE" layoutX="-1.0" layoutY="532.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="515.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect></Text>
+      <Button fx:id="backButton" layoutY="562.0" mnemonicParsing="false" onAction="#toMainmenu" prefHeight="34.0" prefWidth="42.0" style="-fx-background-color: transparent;" stylesheets="@../../../ButtonStyles.css">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../backbutton.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <effect>
+            <Glow />
+         </effect>
+      </Button>
+      <Text fx:id="idText" fill="WHITE" layoutX="-1.0" layoutY="553.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="515.0">
+         <font>
+            <Font size="11.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+       </children>
+</AnchorPane>
